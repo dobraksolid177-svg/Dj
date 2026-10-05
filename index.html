@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08080d" />
+  <title>™®RD♥ — DJ Maker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span>™®RD</span><b>♥</b></div>
+      <div class="status"><i></i> AUDIO LAB</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ORIGINAL → DJ REMIX</p>
+        <h1>Make your song<br><span>hit harder.</span></h1>
+        <p class="sub">Upload lagu milikmu, pilih karakter DJ, atur efek, preview, lalu export hasilnya langsung dari browser.</p>
+      </div>
+      <div class="disc"><div class="disc-hole"></div><div class="disc-label">RD♥</div></div>
+    </section>
+
+    <section class="panel upload-panel">
+      <input id="fileInput" type="file" accept="audio/*" hidden />
+      <button id="uploadBtn" class="upload">
+        <span class="upload-icon">↑</span>
+        <span><strong>Masukkan lagu</strong><small>MP3, WAV, M4A, OGG, AAC</small></span>
+      </button>
+      <div id="trackInfo" class="track hidden">
+        <div class="cover">♫</div>
+        <div class="track-text"><strong id="trackName">Belum ada lagu</strong><small id="trackMeta">—</small></div>
+        <button id="removeBtn" class="icon-btn" title="Hapus">×</button>
+      </div>
+    </section>
+
+    <section id="editor" class="panel editor hidden">
+      <div class="section-title"><span>DJ PRESET</span><small>Pilih karakter</small></div>
+      <div class="presets">
+        <button data-preset="club" class="preset active"><b>CLUB</b><span>Deep bass + punch</span></button>
+        <button data-preset="night" class="preset"><b>NIGHT</b><span>Clean & smooth</span></button>
+        <button data-preset="hard" class="preset"><b>HARD</b><span>Powerful drop</span></button>
+        <button data-preset="chill" class="preset"><b>CHILL</b><span>Warm & wide</span></button>
+      </div>
+
+      <div class="wave-wrap">
+        <canvas id="wave"></canvas>
+        <div class="playhead" id="playhead"></div>
+      </div>
+      <div class="time-row"><span id="current">00:00</span><span id="duration">00:00</span></div>
+
+      <div class="transport">
+        <button id="playBtn" class="play">▶</button>
+        <button id="stopBtn" class="transport-btn">■</button>
+        <div class="meter"><div id="meterBar"></div></div>
+      </div>
+
+      <div class="controls">
+        <label><span>BASS <b id="bassVal">5</b></span><input id="bass" type="range" min="-12" max="12" value="5"></label>
+        <label><span>TREBLE <b id="trebleVal">3</b></span><input id="treble" type="range" min="-12" max="12" value="3"></label>
+        <label><span>ECHO <b id="echoVal">12</b></span><input id="echo" type="range" min="0" max="45" value="12"></label>
+        <label><span>WIDTH <b id="widthVal">115</b>%</span><input id="width" type="range" min="80" max="140" value="115"></label>
+        <label><span>ENERGY <b id="energyVal">8</b></span><input id="energy" type="range" min="0" max="18" value="8"></label>
+        <label><span>SPEED <b id="speedVal">100</b>%</span><input id="speed" type="range" min="80" max="120" value="100"></label>
+      </div>
+
+      <div class="export-row">
+        <button id="previewBtn" class="secondary">↗ Preview DJ</button>
+        <button id="exportBtn" class="primary">↓ Export DJ WAV</button>
+      </div>
+      <p class="note">Semua pemrosesan audio dilakukan lokal di browser. File lagu tidak di-upload ke server.</p>
+      <div id="progress" class="progress hidden"><div></div><span>Memproses...</span></div>
+    </section>
+
+    <footer>™®RD♥ DJ MAKER · Gunakan hanya audio yang kamu punya izin untuk edit.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
