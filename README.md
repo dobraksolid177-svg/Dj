@@ -1,21 +1,17 @@
-# ™®RD♥ DJ Maker — Fixed Vercel Version
+# ™®RD♥ DJ Studio
+Premium client-side DJ/audio remix web app. Vercel-ready static site. Audio is processed locally in the browser.
 
-Versi ini memperbaiki tampilan yang menjadi HTML polos saat `style.css` tidak ikut ter-deploy. `index.html` sekarang sudah membawa CSS dan JavaScript di dalam file, sehingga aman untuk deploy sebagai static site di Vercel.
+## Deploy
+Upload all files to GitHub, import the repository into Vercel, keep Framework Preset as Other, leave Build Command blank and deploy.
 
-Perbaikan utama:
-- Tampilan mobile/DJ kembali normal.
-- Preview DJ benar-benar tersambung ke output audio.
-- Export WAV memakai jalur efek DJ, bukan audio mentah.
-- Slider speed diterapkan saat preview/export.
-- Waveform bisa disentuh untuk seek.
-- Tetap 100% client-side, tanpa database/API.
+## Features
+- Premium responsive UI
+- Local browser DSP
+- DJ presets: Club, Night, Hard, Chill
+- Bass, Treble, Presence, Echo, Reverb, Width, Drive, Energy, Speed, Master
+- DJ Drop and Stutter controls
+- Waveform seek
+- Real-time meter
+- WAV master export
 
-## Deploy ke Vercel
-1. Upload seluruh isi folder ini ke GitHub.
-2. Vercel → Add New → Project → Import repository.
-3. Framework Preset: Other.
-4. Build Command: kosong.
-5. Output Directory: `.`
-6. Deploy.
-
-Gunakan hanya audio yang kamu punya izin untuk edit.
+Use only audio you own or have permission to edit.
