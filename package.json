@@ -1,9 +1,1 @@
-{
-  "name": "rd-dj-maker",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "npx serve .",
-    "start": "npx serve ."
-  }
-}
+{"name":"rd-dj-studio","version":"2.0.0","private":true,"scripts":{"dev":"npx serve .","start":"npx serve ."}}
