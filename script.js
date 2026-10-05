@@ -78,6 +78,7 @@ async function start(){
  stop(false);
  const graph=makeGraph(audioCtx,buffer);
  source=graph.src; analyser=graph.an; gain=graph.out;
+ gain.connect(audioCtx.destination);
  source.playbackRate.value=+$("#speed").value/100;
  const offset=Math.min(pausedAt,Math.max(0,buffer.duration-.01));
  source.start(0,offset);startedAt=audioCtx.currentTime-offset;playing=true;
@@ -108,7 +109,7 @@ $("#exportBtn").onclick=async()=>{
    const speed=+$("#speed").value/100;
    const outDur=buffer.duration/speed;
    const oc=new OfflineAudioContext(buffer.numberOfChannels,Math.ceil(buffer.sampleRate*outDur),buffer.sampleRate);
-   const graph=makeGraph(oc,buffer);graph.src.playbackRate.value=speed;graph.src.start(0);graph.src.connect(oc.destination);
+   const graph=makeGraph(oc,buffer);graph.out.connect(oc.destination);graph.src.playbackRate.value=speed;graph.src.start(0);
    const rendered=await oc.startRendering();
    const wav=toWav(rendered);
    const blob=new Blob([wav],{type:"audio/wav"});const url=URL.createObjectURL(blob);
@@ -123,4 +124,16 @@ function toWav(ab){
  write(0,"RIFF");v.setUint32(4,36+len*ch*bytes,true);write(8,"WAVE");write(12,"fmt ");v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,ch,true);v.setUint32(24,rate,true);v.setUint32(28,rate*ch*bytes,true);v.setUint16(32,ch*bytes,true);v.setUint16(34,16,true);write(36,"data");v.setUint32(40,len*ch*bytes,true);
  let o=44;for(let i=0;i<len;i++)for(let c=0;c<ch;c++){let s=Math.max(-1,Math.min(1,ab.getChannelData(c)[i]));v.setInt16(o,s<0?s*0x8000:s*0x7fff,true);o+=2}return buf;
 }
+
+canvas.addEventListener("pointerdown", (e)=>{
+  if(!buffer) return;
+  const r=canvas.getBoundingClientRect();
+  const ratio=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+  pausedAt=ratio*buffer.duration;
+  if(playing){ start(); } else {
+    $("#current").textContent=fmt(pausedAt);
+    playhead.style.left=(ratio*100)+"%";
+  }
+});
+
 window.addEventListener("resize",()=>{if(buffer)drawWave()});
