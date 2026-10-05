@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#08080d" />
+  <meta name="description" content="™®RD♥ DJ Maker — browser-based audio remix lab." />
   <title>™®RD♥ — DJ Maker</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:#07070b;color:#f7f7fb}body{overflow-x:hidden}.bg{position:fixed;inset:0;background:radial-gradient(circle at 75% 12%,rgba(255,35,126,.14),transparent 28%),radial-gradient(circle at 15% 70%,rgba(114,66,255,.13),transparent 30%),#07070b;z-index:-1}.app{width:min(980px,92%);margin:auto;padding:22px 0 45px}.topbar{display:flex;justify-content:space-between;align-items:center}.brand{font-size:25px;font-weight:900;letter-spacing:-1.5px}.brand b{color:#ff397f}.status{font-size:10px;letter-spacing:2px;color:#a7a7b4}.status i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#57f39b;box-shadow:0 0 12px #57f39b;margin-right:7px}.hero{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:62px 0 38px}.eyebrow{font-size:11px;letter-spacing:3px;color:#ff4b91;font-weight:800}.hero h1{font-size:clamp(42px,7vw,76px);line-height:.95;margin:12px 0 20px;letter-spacing:-4px}.hero h1 span{color:#ff397f}.sub{max-width:570px;color:#a9a9b7;line-height:1.7}.disc{width:170px;height:170px;border-radius:50%;flex:none;background:repeating-radial-gradient(circle,#171720 0 2px,#09090d 3px 5px);box-shadow:0 0 70px rgba(255,43,123,.16);position:relative;animation:spin 7s linear infinite}.disc:before{content:"";position:absolute;inset:27px;border-radius:50%;background:linear-gradient(135deg,#ff397f,#6e39ff)}.disc-hole{position:absolute;z-index:2;width:18px;height:18px;border-radius:50%;background:#09090d;left:76px;top:76px}.disc-label{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:900;font-size:12px}@keyframes spin{to{transform:rotate(360deg)}}.panel{background:rgba(18,18,25,.78);border:1px solid #292934;border-radius:22px;backdrop-filter:blur(18px);box-shadow:0 20px 60px rgba(0,0,0,.25)}.upload-panel{padding:14px}.upload{width:100%;border:1px dashed #454553;border-radius:15px;background:#101018;color:#fff;padding:23px;display:flex;align-items:center;gap:15px;text-align:left;cursor:pointer}.upload:hover{border-color:#ff397f;background:#14141d}.upload-icon{font-size:30px;width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:#241321;color:#ff5b9a}.upload strong,.upload small{display:block}.upload small,.track small{color:#898995;margin-top:5px}.track{display:flex;align-items:center;gap:13px;padding:6px}.cover{width:48px;height:48px;border-radius:11px;background:linear-gradient(135deg,#ff397f,#633cff);display:grid;place-items:center;font-size:20px}.track-text{flex:1;min-width:0}.track-text strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.icon-btn{background:none;border:0;color:#888;font-size:27px;cursor:pointer}.hidden{display:none!important}.editor{margin-top:18px;padding:24px}.section-title{display:flex;justify-content:space-between;margin-bottom:13px;font-size:11px;letter-spacing:2px;font-weight:800}.section-title small{color:#777783;letter-spacing:0}.presets{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.preset{border:1px solid #2d2d38;background:#111119;color:#eee;padding:13px;border-radius:13px;text-align:left;cursor:pointer}.preset.active{border-color:#ff397f;box-shadow:inset 0 0 0 1px #ff397f33;background:#1b1018}.preset b,.preset span{display:block}.preset b{font-size:12px}.preset span{font-size:10px;color:#777783;margin-top:4px}.wave-wrap{height:150px;margin-top:22px;border-radius:14px;overflow:hidden;background:#0b0b10;position:relative}.wave-wrap canvas{width:100%;height:100%}.playhead{position:absolute;top:0;bottom:0;width:2px;background:#fff;left:0;box-shadow:0 0 12px #fff}.time-row{display:flex;justify-content:space-between;color:#777783;font:11px monospace;margin-top:7px}.transport{display:flex;align-items:center;gap:10px;margin:15px 0 22px}.play{width:48px;height:48px;border:0;border-radius:50%;background:#ff397f;color:white;font-size:18px;cursor:pointer}.transport-btn{height:38px;width:38px;border-radius:10px;background:#15151e;color:#aaa;border:1px solid #2a2a34}.meter{height:5px;flex:1;background:#1a1a23;border-radius:9px;overflow:hidden}.meter div{height:100%;width:0;background:linear-gradient(90deg,#5cf2a0,#ffd75c,#ff397f);transition:width .08s}.controls{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}.controls label{font-size:10px;color:#8f8f9b;letter-spacing:1px}.controls label span{display:flex;justify-content:space-between;margin-bottom:8px}.controls b{color:#fff}.controls input{width:100%;accent-color:#ff397f}.export-row{display:flex;gap:10px;margin-top:25px}.primary,.secondary{flex:1;border:0;border-radius:12px;padding:14px;font-weight:800;cursor:pointer}.primary{background:#ff397f;color:#fff}.secondary{background:#1a1a23;color:#ddd;border:1px solid #30303b}.note{font-size:10px;color:#6f6f7c;text-align:center;margin:14px 0 0}.progress{margin-top:15px;text-align:center;font-size:10px;color:#aaa}.progress div{height:5px;background:#25252e;border-radius:5px;overflow:hidden;margin-bottom:8px}.progress div:after{content:"";display:block;height:100%;width:45%;background:#ff397f;animation:load 1s infinite}@keyframes load{50%{transform:translateX(120%)}}footer{text-align:center;color:#555563;font-size:10px;margin-top:22px}@media(max-width:650px){.hero{padding:40px 0 28px}.disc{width:105px;height:105px}.disc-hole{left:44px;top:44px}.hero h1{letter-spacing:-2px}.presets{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr}.editor{padding:17px}.export-row{flex-direction:column}.sub{font-size:13px}.hero{gap:12px}.disc:before{inset:18px}}
+
+  </style>
 </head>
 <body>
   <div class="bg"></div>
@@ -77,6 +81,147 @@
 
     <footer>™®RD♥ DJ MAKER · Gunakan hanya audio yang kamu punya izin untuk edit.</footer>
   </main>
-  <script src="script.js"></script>
+  <script>
+const $=s=>document.querySelector(s);
+const fileInput=$("#fileInput"), uploadBtn=$("#uploadBtn"), editor=$("#editor"), trackInfo=$("#trackInfo");
+const trackName=$("#trackName"), trackMeta=$("#trackMeta"), playBtn=$("#playBtn"), stopBtn=$("#stopBtn");
+const canvas=$("#wave"), ctx=canvas.getContext("2d"), playhead=$("#playhead"), meter=$("#meterBar"), progress=$("#progress");
+
+let audioCtx=null, buffer=null, source=null, gain=null, analyser=null, dryGain=null, delay=null, feedback=null;
+let startedAt=0, pausedAt=0, raf=0, playing=false;
+
+const presets={
+ club:{bass:7,treble:3,echo:12,width:118,energy:9,speed:100},
+ night:{bass:3,treble:4,echo:7,width:110,energy:5,speed:100},
+ hard:{bass:10,treble:5,echo:17,width:125,energy:13,speed:103},
+ chill:{bass:2,treble:1,echo:15,width:130,energy:3,speed:96}
+};
+const ids=["bass","treble","echo","width","energy","speed"];
+
+function fmt(sec){sec=Math.max(0,sec||0);return `${String(Math.floor(sec/60)).padStart(2,"0")}:${String(Math.floor(sec%60)).padStart(2,"0")}`}
+function setVal(id,v){$("#"+id).value=v;$("#"+id+"Val").textContent=v}
+ids.forEach(id=>$("#"+id).addEventListener("input",()=>{ $("#"+id+"Val").textContent=$("#"+id).value; updateLive(); }));
+document.querySelectorAll(".preset").forEach(b=>b.onclick=()=>{document.querySelectorAll(".preset").forEach(x=>x.classList.remove("active"));b.classList.add("active");Object.entries(presets[b.dataset.preset]).forEach(([k,v])=>setVal(k,v));updateLive()});
+
+uploadBtn.onclick=()=>fileInput.click();
+fileInput.onchange=async()=>{const f=fileInput.files[0];if(!f)return; await loadFile(f)};
+$("#removeBtn").onclick=()=>{stop();buffer=null;editor.classList.add("hidden");trackInfo.classList.add("hidden");uploadBtn.classList.remove("hidden");fileInput.value=""};
+
+async function loadFile(file){
+ try{
+  audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+  buffer=await audioCtx.decodeAudioData(await file.arrayBuffer());
+  trackName.textContent=file.name;
+  trackMeta.textContent=`${fmt(buffer.duration)} · ${(file.size/1048576).toFixed(2)} MB`;
+  uploadBtn.classList.add("hidden");trackInfo.classList.remove("hidden");editor.classList.remove("hidden");
+  drawWave(); drawLoop(); updateLive();
+ }catch(e){alert("Format audio tidak bisa dibaca browser ini. Coba MP3 atau WAV.");console.error(e)}
+}
+
+function drawWave(){
+ const w=canvas.width=canvas.clientWidth*devicePixelRatio,h=canvas.height=canvas.clientHeight*devicePixelRatio;
+ ctx.clearRect(0,0,w,h);ctx.strokeStyle="rgba(255,57,127,.65)";ctx.lineWidth=1.2*devicePixelRatio;
+ const data=buffer.getChannelData(0), step=Math.max(1,Math.floor(data.length/w));
+ ctx.beginPath();
+ for(let x=0;x<w;x++){let min=1,max=-1;for(let j=0;j<step;j++){const v=data[x*step+j]||0;min=Math.min(min,v);max=Math.max(max,v)}ctx.moveTo(x,h/2+min*h*.42);ctx.lineTo(x,h/2+max*h*.42)}ctx.stroke();
+}
+function makeGraph(ac,buf,forExport=false){
+ const src=ac.createBufferSource();src.buffer=buf;
+ const g=ac.createGain(); const bass=ac.createBiquadFilter();bass.type="lowshelf";bass.frequency.value=140;
+ const treble=ac.createBiquadFilter();treble.type="highshelf";treble.frequency.value=4500;
+ const comp=ac.createDynamicsCompressor();comp.threshold.value=-12;comp.knee.value=18;comp.ratio.value=3;comp.attack.value=.005;comp.release.value=.15;
+ const an=ac.createAnalyser();an.fftSize=256;
+ const d=ac.createDelay(1);const fb=ac.createGain();
+ const vals={bass:+$("#bass").value,treble:+$("#treble").value,echo:+$("#echo").value,energy:+$("#energy").value};
+ bass.gain.value=vals.bass;treble.gain.value=vals.treble;g.gain.value=1+vals.energy/100;
+ d.delayTime.value=.18;fb.gain.value=Math.min(.48,vals.echo/100*.7);d.connect(fb);fb.connect(d);
+ src.connect(bass).connect(treble).connect(comp).connect(g);comp.connect(d);
+ const out=ac.createGain(); const width=+$("#width").value/100;
+ // Simple stereo widening matrix.
+ const splitter=ac.createChannelSplitter(2), merger=ac.createChannelMerger(2);
+ if(buf.numberOfChannels>1){
+   g.disconnect();g.connect(splitter);
+   const l=ac.createGain(),r=ac.createGain();l.gain.value=1; r.gain.value=1;
+   splitter.connect(l,0);splitter.connect(r,1);
+   l.connect(merger,0,0);r.connect(merger,0,1);
+   splitter.connect(merger,0,1);splitter.connect(merger,1,0);
+   merger.connect(out);
+ }else g.connect(out);
+ d.connect(out);out.connect(an);
+ return {src,out,an};
+}
+function updateLive(){
+ if(!audioCtx||!buffer)return;
+ if(playing){const pos=audioCtx.currentTime-startedAt; // rebuild only on next play to avoid clicks
+   if(source) source.playbackRate.value=+$("#speed").value/100;
+ }
+}
+async function start(){
+ if(!buffer)return;
+ if(!audioCtx)audioCtx=new AudioContext(); await audioCtx.resume();
+ stop(false);
+ const graph=makeGraph(audioCtx,buffer);
+ source=graph.src; analyser=graph.an; gain=graph.out;
+ gain.connect(audioCtx.destination);
+ source.playbackRate.value=+$("#speed").value/100;
+ const offset=Math.min(pausedAt,Math.max(0,buffer.duration-.01));
+ source.start(0,offset);startedAt=audioCtx.currentTime-offset;playing=true;
+ playBtn.textContent="Ⅱ"; source.onended=()=>{if(playing){playing=false;pausedAt=0;playBtn.textContent="▶"}};
+ meterLoop();
+}
+function stop(reset=true){
+ if(source){try{source.stop()}catch{}source=null}
+ playing=false;if(reset)pausedAt=0;playBtn.textContent="▶";cancelAnimationFrame(raf)
+}
+playBtn.onclick=()=>playing?pause():start();
+function pause(){if(!playing)return;pausedAt=Math.min(buffer.duration,audioCtx.currentTime-startedAt);stop(false)}
+stopBtn.onclick=()=>stop(true);
+function meterLoop(){
+ if(!playing)return;const arr=new Uint8Array(analyser.frequencyBinCount);analyser.getByteFrequencyData(arr);let avg=arr.reduce((a,b)=>a+b,0)/arr.length;meter.style.width=Math.min(100,avg*1.7)+"%";
+ const t=audioCtx.currentTime-startedAt;$("#current").textContent=fmt(t);$("#duration").textContent=fmt(buffer.duration);
+ playhead.style.left=Math.min(100,t/buffer.duration*100)+"%";raf=requestAnimationFrame(meterLoop);
+}
+
+function drawLoop(){ if(buffer){$("#duration").textContent=fmt(buffer.duration)} requestAnimationFrame(drawLoop) }
+
+$("#previewBtn").onclick=()=>{if(playing)pause();else start()};
+
+$("#exportBtn").onclick=async()=>{
+ if(!buffer)return;
+ progress.classList.remove("hidden");
+ try{
+   const speed=+$("#speed").value/100;
+   const outDur=buffer.duration/speed;
+   const oc=new OfflineAudioContext(buffer.numberOfChannels,Math.ceil(buffer.sampleRate*outDur),buffer.sampleRate);
+   const graph=makeGraph(oc,buffer);graph.out.connect(oc.destination);graph.src.playbackRate.value=speed;graph.src.start(0);
+   const rendered=await oc.startRendering();
+   const wav=toWav(rendered);
+   const blob=new Blob([wav],{type:"audio/wav"});const url=URL.createObjectURL(blob);
+   const a=document.createElement("a");a.href=url;a.download=`RD-DJ-${trackName.textContent.replace(/\.[^.]+$/,"")}.wav`;a.click();URL.revokeObjectURL(url);
+ }catch(e){alert("Export gagal: "+e.message);console.error(e)}
+ finally{progress.classList.add("hidden")}
+};
+
+function toWav(ab){
+ const ch=ab.numberOfChannels,len=ab.length,rate=ab.sampleRate,bytes=2;
+ const buf=new ArrayBuffer(44+len*ch*bytes),v=new DataView(buf),write=(o,s)=>{for(let i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i))};
+ write(0,"RIFF");v.setUint32(4,36+len*ch*bytes,true);write(8,"WAVE");write(12,"fmt ");v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,ch,true);v.setUint32(24,rate,true);v.setUint32(28,rate*ch*bytes,true);v.setUint16(32,ch*bytes,true);v.setUint16(34,16,true);write(36,"data");v.setUint32(40,len*ch*bytes,true);
+ let o=44;for(let i=0;i<len;i++)for(let c=0;c<ch;c++){let s=Math.max(-1,Math.min(1,ab.getChannelData(c)[i]));v.setInt16(o,s<0?s*0x8000:s*0x7fff,true);o+=2}return buf;
+}
+
+canvas.addEventListener("pointerdown", (e)=>{
+  if(!buffer) return;
+  const r=canvas.getBoundingClientRect();
+  const ratio=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+  pausedAt=ratio*buffer.duration;
+  if(playing){ start(); } else {
+    $("#current").textContent=fmt(pausedAt);
+    playhead.style.left=(ratio*100)+"%";
+  }
+});
+
+window.addEventListener("resize",()=>{if(buffer)drawWave()});
+
+  </script>
 </body>
 </html>
